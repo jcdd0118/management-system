@@ -1,0 +1,348 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #ecf0f3;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.register-wrapper {
+    width: 850px;
+    background: #ecf0f3;
+    border-radius: 20px;
+    box-shadow: 13px 13px 20px #cbced1,
+                -13px -13px 20px #ffffff;
+    padding: 40px;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.register-wrapper h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Enhanced input container for floating labels */
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    background: #ecf0f3;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 5px 5px 10px #cbced1,
+                inset -5px -5px 10px #ffffff;
+    font-size: 14px;
+    padding: 15px 15px 12px 15px;
+    width: 100%;
+    transition: all 0.3s ease;
+    color: #333;
+    outline: none;
+}
+
+/* Hover effects for form controls */
+.form-control:hover {
+    box-shadow: inset 3px 3px 6px #cbced1,
+                inset -3px -3px 6px #ffffff,
+                0 0 10px rgba(28, 134, 238, 0.1);
+    transform: translateY(-1px);
+}
+
+/* Focus effects for form controls */
+.form-control:focus {
+    box-shadow: inset 2px 2px 5px #cbced1,
+                inset -2px -2px 5px #ffffff,
+                0 0 15px rgba(28, 134, 238, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Floating label styles - starts as placeholder */
+.input-container label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 14px;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+    padding: 0;
+    z-index: 1;
+    font-weight: 500;
+    transform-origin: left center;
+}
+
+/* When input is focused or has content, transform label to top */
+.input-container input:focus + label,
+.input-container input.has-content + label,
+.input-container select:focus + label,
+.input-container select.has-content + label {
+    top: -8px;
+    left: 12px;
+    font-size: 14px;
+    color: #1c86ee;
+    background: #ecf0f3;
+    font-weight: 600;
+    padding: 0 6px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: scale(0.9) translateY(0);
+}
+
+/* Ensure labels start inside input fields */
+.input-container input:not(:focus):not(.has-content) + label,
+.input-container select:not(:focus):not(.has-content) + label {
+    top: 50%;
+    left: 15px;
+    font-size: 14px;
+    color: #999;
+    background: transparent;
+    padding: 0;
+    transform: translateY(-50%);
+    box-shadow: none;
+}
+
+/* Remove default placeholder */
+.input-container input::placeholder,
+.input-container select::placeholder {
+    color: transparent;
+    transition: color 0.3s ease;
+}
+
+/* Special handling for select elements */
+.input-container select {
+    cursor: pointer;
+    padding-top: 9px; /* Add more top padding to accommodate floating label */
+    padding-bottom: 10px;
+}
+
+.input-container select option {
+    background: #ecf0f3;
+    color: #333;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    background: #1c86ee;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 3px 3px 6px #b8c6db,
+                -3px -3px 6px #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #1a74cc;
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 8px #b8c6db,
+                -4px -4px 8px #ffffff;
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 2px 2px 4px #b8c6db,
+                -2px -2px 4px #ffffff;
+}
+
+.form-group label.static-label {
+    position: static;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+    font-size: 14px;
+}
+
+.radio-container {
+    margin-top: 0;
+}
+
+.static-label {
+    margin-top: -20px;
+}
+
+/* Radio button styling */
+.radio-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.radio-group label {
+    position: static !important;
+    font-weight: 400 !important;
+    color: #333 !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.radio-group input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.footer-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-link a {
+    color: #1c86ee;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link a:hover {
+    color: #1a74cc;
+    text-decoration: underline;
+}
+
+.required::after {
+    content: " *";
+    color: red;
+}
+
+.error-popup {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f44336;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    z-index: 9999;
+    animation: slideDown 0.3s ease;
+}
+
+.error-popup.show {
+    display: block;
+}
+
+.error-popup p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.success-popup {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    z-index: 9999;
+    animation: slideDown 0.3s ease;
+}
+
+.success-popup.show {
+    display: block;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* Bootstrap grid system compatibility */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -5px;
+    margin-left: -5px;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    .register-wrapper {
+        width: 95%;
+        padding: 25px;
+    }
+    
+    .col-md-4,
+    .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .form-row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+    
+    .form-group {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+.terms-text {
+    font-size: 0.85rem;   /* smaller font */
+    color: #6c757d;       /* Bootstrap muted gray */
+}
+.terms-text a {
+    color: #007bff;       /* keep links blue */
+    text-decoration: none;
+}
+.terms-text a:hover {
+    text-decoration: underline;
+}

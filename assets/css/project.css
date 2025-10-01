@@ -1,0 +1,446 @@
+/* Container Styling */
+.container {
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-top: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Filter Buttons Styling */
+.filter-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+.filter-buttons a {
+    padding: 0.5rem 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #495057;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+  
+.filter-buttons a:hover {
+    background-color: #e9ecef;
+    border-color: #ced4da;
+}
+  
+.filter-buttons a.active {
+    background-color: #0d6efd;
+    color: #fff;
+    border-color: #0d6efd;
+}
+  
+/* Table Styling */
+.table {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+  
+.table th {
+    background-color: #e9ecef;
+    color: #343a40;
+    font-weight: 600;
+    padding: 1rem;
+    border-bottom: 2px solid #dee2e6;
+}
+  
+.table td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #dee2e6;
+}
+  
+.table tr:hover {
+    background-color: #f1f3f5;
+}
+  
+.table .btn {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    border-radius: 6px;
+    background-color: #0d6efd;
+    color: #fff;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+  
+.table .btn:hover {
+    background-color: #0b5ed7;
+}
+
+.truncate {
+    max-width: 250px; /* Adjust this value as needed */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+  
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+  
+    .filter-buttons {
+        display: none; /* Hide regular buttons on mobile */
+    }
+  
+    .filter-dropdown {
+        display: block; /* Show dropdown on mobile */
+        margin-bottom: 0.7rem;
+    }
+  
+    .filter-dropdown .dropdown-menu {
+        width: auto;
+        border-radius: 6px;
+    }
+  
+    .filter-dropdown .dropdown-item {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+  
+    .filter-dropdown .dropdown-item.active {
+        background-color: #0d6efd;
+        color: #fff;
+    }
+  
+    .table th, .table td {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    .table .btn {
+        padding: 0.325rem 0.55rem;
+        font-size: 0.65rem;
+    }
+  
+    /* Add a wrapper for the table to enable horizontal scrolling */
+    .table-responsive {
+        overflow-x: auto; /* Enable horizontal scrolling */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+    }
+  
+    /* Ensure the table doesn't overflow the container */
+    .table {
+        min-width: 100%; /* Ensure table takes at least full width */
+        width: auto; /* Allow table to expand as needed */
+        margin-bottom: 0; /* Remove default margin to avoid extra spacing */
+    }
+
+    .truncate {
+        max-width: 150px; /* Adjust this value as needed */
+    }
+
+    .proponent-truncate {
+        max-width: auto; /* Adjust for mobile layout */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block; /* Ensures truncation works */
+    }
+
+    /* Adjusted styles for creative elements to fit mobile */
+    .back-button-creative {
+        padding: 0.4rem; /* Reduced padding for icon-only button */
+        font-size: 0; /* Hide text by setting font-size to 0 */
+        gap: 0; /* Remove gap since no text */
+        width: 46px; /* Fixed width for icon */
+        height: 40px; /* Fixed height for icon */
+        justify-content: center; /* Center icon */
+    }
+
+    .back-button-creative i {
+        font-size: 0.85rem; /* Maintain icon size */
+    }
+
+    .back-button-creative span, /* Target any text within span */
+    .back-button-creative::after, /* Target any pseudo-elements with text */
+    .back-button-creative::before {
+        display: none; /* Ensure no text or pseudo-content appears */
+    }
+
+    .approval-status {
+        max-width: 100%; /* Prevent going off-screen */
+        padding: 0.4rem;
+        font-size: 0.8rem;
+        background-size: 10px;
+        background-position: right 0.5rem center;
+    }
+
+    .comments-textarea {
+        max-width: 100%;
+        min-height: 100px;
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .submit-button-creative {
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+        gap: 4px;
+    }
+
+    .submit-button-creative i {
+        font-size: 0.85rem;
+    }
+
+    .form-label {
+        font-size: 0.9rem;
+    }
+}
+  
+/* Ensure dropdown button matches button styling on desktop */
+.filter-dropdown .btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    width: auto;
+    text-align: left;
+    background-color: #fff;
+    color: #495057;
+}
+  
+.filter-dropdown .btn:hover {
+    background-color: #e9ecef;
+}
+
+/* New Creative Styles for Back to List, Approval Status, Comments, and Submit Button */
+.back-button-creative {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.40rem 0.65rem;
+    background-color: #6c757d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.back-button-creative:hover {
+    background-color: #5a6268;
+}
+
+.approval-status {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.75rem;
+    border: 2px solid #ced4da;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #ffffff, #f1f3f5);
+    font-size: 1rem;
+    color: #495057;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="%23495057" viewBox="0 0 16 16"><path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 12px;
+}
+
+.approval-status:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 8px rgba(13, 110, 253, 0.3);
+}
+
+.approval-status option[value="pending"] {
+    color: #ffc107;
+}
+
+.approval-status option[value="approved"] {
+    color: #28a745;
+}
+
+.approval-status option[value="rejected"] {
+    color: #dc3545;
+}
+
+.comments-textarea {
+    width: 100%;
+    max-width: 500px;
+    min-height: 120px;
+    padding: 1rem;
+    border: 2px solid #ced4da;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #ffffff, #f8f9fa);
+    font-size: 1rem;
+    color: #495057;
+    resize: vertical;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.comments-textarea:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 8px rgba(13, 110, 253, 0.3);
+}
+
+.submit-button-creative {
+    padding: 0.55rem 1rem;
+    background-color: #0d6efd;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.submit-button-creative:hover {
+    background-color: #0b5ed7;
+}
+
+.cancel-button-creative {
+    padding: 0.55rem 1rem;
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cancel-button-creative:hover {
+    background-color: red;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #343a40;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Status badge styling */
+.badge.bg-pending { 
+    background-color: #ffc107; 
+    color: #000; 
+}
+.badge.bg-approved { 
+    background-color: #28a745; 
+    color: #fff; 
+}
+.badge.bg-rejected { 
+    background-color: #dc3545; 
+    color: #fff; 
+}
+
+/* Styling for the View PDF link */
+.pdf-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.pdf-link:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.pdf-link i {
+    margin-right: 8px;
+}
+
+/* Styling for the Schedule Defense input */
+.schedule-input {
+    max-width: 300px;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.schedule-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+/* Styling for the Remarks textarea */
+.remarks-textarea {
+    width: 100%;
+    min-height: 100px; /* Reduced from 150px */
+    padding: 8px; /* Reduced from 12px */
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1rem;
+    resize: vertical;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.remarks-textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+
+/* Styling for the Submit button */
+.submit-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Ensure form labels are styled consistently */
+.form-label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+a:hover {
+    color: #0056b3;
+}
+        
+ul {
+    padding: 0;
+    list-style: none;
+}
+ul li {
+    margin-bottom: 10px;
+}
+

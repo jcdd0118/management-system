@@ -1,0 +1,3 @@
+ID,Title,Author,Year,Abstract,Keywords,Document Path,User ID,Status
+,Sample Research Study,John Doe,2024,This is a sample abstract for the research paper that demonstrates the import functionality.,research, sample, study,uploads/research_sample.pdf,1,verified
+,Advanced Data Analysis,Jane Smith,2023,Another sample abstract for demonstration purposes showing how research data can be imported.,analysis, data, results,,2,verified
