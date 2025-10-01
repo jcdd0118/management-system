@@ -73,7 +73,7 @@ CapTrack Vault is a multi-role management system that facilitates the complete c
   - PHPWord (Document processing)
 - **File Upload**: Secure file handling with validation
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 management_system/
@@ -143,7 +143,7 @@ management_system/
    - Register the first admin account
    - Configure year sections and system settings
 
-## 📖 Usage Guide
+## Usage Guide
 
 ### For Students
 
